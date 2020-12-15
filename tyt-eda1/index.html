@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+{strip}
+
+{$html_class_array = []}
+{$_color_scheme_class = 'color_scheme_'|cat:str_replace('img/themesettings/','',str_replace('.png','',$theme_settings.color_scheme))}
+
+{if $theme_settings.color_scheme}{$html_class_array[] = $_color_scheme_class}{/if}
+{if $theme_settings.font_size}{$html_class_array[] = $theme_settings.font_size}{/if}
+{if $theme_settings.font_family}{$html_class_array[] = $theme_settings.font_family}{/if}
+{if $wa->globals('isMyAccount')}{$html_class_array[] = 'my'}{/if}
+
+{if $wa->shop}
+    {if method_exists($wa->shop, 'checkout')}
+        {$_cart_url = $wa->shop->checkout()->cartUrl()}
+    {else}
+        {$_cart_url = $wa->getUrl('shop/frontend/cart')}
+    {/if}
+{/if}
+
+{$_is_order_page = $wa->globals("isOrderPage")}
+{if !empty($_is_order_page)}
+    {$html_class_array[] = "is-order-page"}
+{/if}
+
+{/strip}
+<html{if !empty($html_class_array)} class="{join(' ', $html_class_array)}"{/if}>
+
+{$_head_prefix = $wa->globals("headPrefix")}
+
+<head {if !empty($_head_prefix)}prefix="{$_head_prefix}"{/if}>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1{if $wa->isMobile()}, maximum-scale=1, user-scalable=0{/if}" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+
+    <title>{$wa->title()|escape}</title>
+    <meta name="keywords" content="{$wa->meta('keywords')|escape}" />
+    <meta name="description" content="{$wa->meta('description')|escape}" />
+
+    {if !empty($canonical)}<link rel="canonical" href="{$canonical}"/>{/if}
+    <link rel="icon" href="/favicon.ico"/>
+    <link rel="shortcut icon" href="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/logo.png" type="image/png"/>
+    {if $wa->blog}
+        <!-- rss -->
+        {$rss=$wa->blog->rssUrl()}
+        {if $rss}<link rel="alternate" type="application/rss+xml" title="{$wa->accountName()}" href="{$rss}">{/if}
+    {/if}
+
+    <!-- css -->
+    <link href="{$wa_theme_url}default.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
+    {if $wa->shop && $wa->shop->currency() == 'RUB'}<link href="{$wa_url}wa-content/font/ruble/arial/fontface.css" rel="stylesheet" type="text/css">{/if}
+    {$wa->css()} {* links active plugins CSS *}
+    {if $theme_settings.font_family|strstr:'_google_'}
+        {if $theme_settings.font_family|strstr:'fira'}{$_real_font_name = 'Fira+Sans:400,500,700,400italic,500italic,700italic'}{/if}
+        {if $theme_settings.font_family|strstr:'opensans'}{$_real_font_name = 'Open+Sans:400,700,700italic,400italic'}{/if}
+        {if $theme_settings.font_family|strstr:'ptsans'}{$_real_font_name = 'PT+Sans:400,700,700italic,400italic'}{/if}
+        {if $theme_settings.font_family|strstr:'ptserif'}{$_real_font_name = 'PT+Serif:400,700,700italic,400italic'}{/if}
+        {if $theme_settings.font_family|strstr:'ptsansandserif'}{$_real_font_name = 'PT+Sans+Caption:400,700|PT+Serif:400,700,700italic,400italic'}{/if}
+        {if $theme_settings.font_family|strstr:'roboto'}{$_real_font_name = 'Roboto:400,700,700italic,400italic'}{/if}
+        {if $theme_settings.font_family|strstr:'lora'}{$_real_font_name = 'Lora:400,700,700italic,400italic'}{/if}
+        {if $theme_settings.font_family|strstr:'ubuntu'}{$_real_font_name = 'Ubuntu:400,700,700italic,400italic'}{/if}
+        <link href='https://fonts.googleapis.com/css?family={$_real_font_name}&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    {/if}
+
+    <!-- js -->
+    <script type="text/javascript" src="{$wa_static_url}wa-content/js/jquery/jquery-1.11.1.min.js" ></script>
+    <script type="text/javascript" src="{$wa_static_url}wa-content/js/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="{$wa_theme_url}default.js?v{$wa_theme_version}"></script>
+
+    {$wa->js()} {* links active plugins JS *}
+
+    {include file="`$wa_active_theme_path`/head.html" inline}
+
+    {$wa->head()} {* links Google Analytics tracking code, site's custom JS (defined in Site app settings), and meta data such as Open Graph data *}
+
+    <!-- custom colors -->
+    <style>
+        {if $theme_settings.color_text} html, body { color: {$theme_settings.color_text}; } {/if}
+        {if $theme_settings.color_links} a { color: {$theme_settings.color_links}; } {/if}
+        {if $theme_settings.color_links_visited} a:visited { color: {$theme_settings.color_links_visited}; } {/if}
+        {if $theme_settings.color_links_hover} a:hover { color: {$theme_settings.color_links_hover}; } {/if}
+        {if $theme_settings.color_hint}
+            .hint,
+            .breadcrumbs,
+            .breadcrumbs a,
+            .breadcrumbs span.rarr,
+            table.features tr.divider td,
+            .bestsellers .bestsellers-header,
+            ul.thumbs li span.summary,
+            .review .summary,
+            .review .summary .date,
+            ul.albums li .count,
+            .album-note,
+            .credentials .username, .credentials .username a { color: {$theme_settings.color_hint}; }
+        {/if}
+        {if $theme_settings.header_customcolor_links}
+            header h2 a, header h2 a:hover,
+            header .apps li a, header .apps li a:hover,
+            header .auth li a, header .auth li a:hover,
+            header .auth li a strong, header .auth li a:hover strong,
+            header #globalnav.light .apps li a, header #globalnav.light .apps li a:hover,
+            header #globalnav.light .apps li.selected a,
+            header #globalnav.light .apps li.selected a:hover { color: {$theme_settings.header_customcolor_links} !important; }
+            header #globalnav.light .apps li.selected a { font-weight: bold; }
+            header #globalnav.light h2 a,
+            header #globalnav.light h2 a:hover { color: {$theme_settings.header_customcolor_links} !important; }
+            header .apps li.selected a { background: transparent; }
+        {/if}
+        {if $theme_settings.color_custom_links}
+            header .pages li a, header .pages li a:hover,
+            .color_scheme_white header .pages li a,
+            .color_scheme_white header .pages li a:hover { color: {$theme_settings.color_custom_links} !important; }
+        {/if}
+        {if trim($theme_settings.style_custom)}{$theme_settings.style_custom}{/if}
+    </style>
+
+    <!--[if lt IE 9]>
+    <script>
+    document.createElement('header');
+    document.createElement('nav');
+    document.createElement('section');
+    document.createElement('article');
+    document.createElement('aside');
+    document.createElement('footer');
+    document.createElement('figure');
+    document.createElement('hgroup');
+    document.createElement('menu');
+    </script>
+    <![endif]-->
+
+</head>
+<body>
+    <header class="globalheader home_page">
+
+        {if count($wa->apps())>0 || $wa->isAuthEnabled()}
+
+            <!-- GLOBAL NAVIGATION -->
+            <div id="globalnav" class="{if $theme_settings.header_scheme|strstr:'white'}light{if $theme_settings.header_scheme|strstr:'andgray'} andgray{/if}{/if}"{if $theme_settings.header_customcolor} style="background-color: {$theme_settings.header_customcolor};"{/if}>
+                <div class="container">
+
+                    <div class="wa-flex-box full-line">
+                        <nav class="column wa-flex-box middle" style="flex: 1;">
+
+
+                            {strip}
+                            <ul class="apps">
+                                {$_links = $wa->apps() }
+
+                                {foreach $_links as $a}
+                                    {if !($a.url == $wa_url && $a.name == $wa->accountName())}
+                                        <li{if $a.url==$wa_app_url && !$wa->globals('isMyAccount') || strlen($a.url)>1 && $wa->currentUrl()|strstr:$a.url} class="selected"{/if}><a href="{$a.url}">{$a.name}</a></li>
+                                    {/if}
+                                {/foreach}
+                            </ul>
+                            {/strip}
+
+                            <div class="clear-both"></div>
+                        </nav>
+
+                        <div class="column wa-flex-box middle">
+                            {$_hide_cart = $wa->globals("hideCart")}
+                            {if $wa->shop && (!method_exists($wa->shop, 'hasRoutes') || $wa->shop->hasRoutes())
+                              && !empty($theme_settings.show_cart) && empty($_hide_cart)}
+                                <!-- cart -->
+                                {$cart_total = $wa->shop->cart->total()}
+                                <div id="cart" class="cart{if !$cart_total} empty{/if}">
+                                    <a href="{$_cart_url}" class="cart-summary">
+                                        <i class="cart-icon"></i>
+                                        <strong class="cart-total">{wa_currency_html($cart_total, $wa->shop->currency())}</strong>
+                                    </a>
+                                    <div id="cart-content">
+                                        {* <div class="cart-just-added">
+                                           %s is now in your shopping cart
+                                        </div> *}
+                                    </div>
+                                    <a href="{$_cart_url}" class="cart-to-checkout" style="display: none;">
+                                        [s`View cart`]
+                                    </a>
+                                </div>
+
+                                {strip}
+                                {capture assign="_loading_template"}
+                                    <div class="s-loading-section">
+                                        <div class="s-loading-content">
+                                            <i class="icon16 loading"></i>
+                                        </div>
+                                    </div>
+                                {/capture}
+                                {/strip}
+
+                                <script>
+                                    ( function($) {
+                                        var is_loading = false;
+                                        $("#cart").on("click", function() {
+                                            if (!is_loading) {
+                                                is_loading = true;
+                                                $("body").append({$_loading_template|json_encode});
+                                            }
+                                        });
+                                    })(jQuery);
+                                </script>
+                            {/if}
+
+                            {if $wa->isAuthEnabled()}
+                                <!-- user auth -->
+                                {strip}
+                                <ul class="auth" id="js-header-auth-wrapper">
+                                    {if $wa->user()->isAuth()}
+                                        {if $wa->myUrl()}
+                                            <li{if $wa->globals('isMyAccount')} class="bold"{/if}>
+                                                <a href="{$wa->myUrl()}" class="not-visited"><i class="icon16 userpic20 float-left" style="background-image: url('{$wa->user()->getPhoto2x(20)}');"></i> <strong>{$wa->user('firstname')|default:'[`My account`]'}</strong></a>
+                                            </li>
+                                        {else}
+                                            <li><strong>{$wa->user('firstname')|default:'[`My account`]'}</strong></li>
+                                        {/if}
+                                        <li><a href="?logout" class="not-visited">[s`Log out`]</a></li>
+                                    {else}
+                                        <li><a href="{$wa->loginUrl()}" class="not-visited">[s`Log in`]</a></li>
+                                        <li><a href="{$wa->signupUrl()}" class="not-visited">[s`Sign up`]</a></li>
+                                    {/if}
+                                </ul>
+                                {/strip}
+                            {/if}
+
+                            <button id="mobile-nav-toggle"></button>
+
+                            <div class="clear-both"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        {/if}
+
+        <!-- APP NAVIGATION -->
+        <div class="banner container-fluid" id="header-container"{if $theme_settings.header_scheme|strstr:'andgray'} style="border-top: 1px solid transparent;"{/if}>
+            {if $wa->globals('isMyAccount')}
+
+                {* focused personal accounts navigation *}
+                {$wa->myNav('pages')}
+
+            {else}
+
+                {include file="`$wa_active_theme_path`/header.html" inline}
+
+            {/if}
+            <div class="clear-both"></div>
+        </div>
+
+    </header>
+
+    <!-- APP CONTENT -->
+    <main class="maincontent">
+         {include file="`$wa_active_theme_path`/main.html" inline}
+    </main>
+
+    <!-- FOOTER -->
+    <footer >
+                {include file="`$wa_active_theme_path`/footer.html" inline}
+
+    </footer>
+
+    {* admin-only slideout sidebar for nice and smooth real time theme customizations *}
+    {if $theme_settings.admin_sidebar}
+        {if $wa->user()->isAdmin()}{include file="admin-sidebar.html" inline}{/if}
+    {/if}
+</body>
+</html>

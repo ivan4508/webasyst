@@ -1,0 +1,623 @@
+{if $wa->currentUrl() == $wa_app_url && (empty($page.id) && empty($page.content))}
+          <div class="container">
+             <div class="row featurette">
+              <div class="col-md-8">
+                <h2>Тут еда</h2>
+                <p class="lead">Мы доставим вам горячие и вкусные блюда русской, европейской и кавказской кухни собственного производства.</p>
+                <p class="lead"><img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/dostavka_r.png" alt="Доставка">Доставка <span>24 часа<span></p>
+                </div>
+                <div class="col-md-4">
+                 <img class="logo_big" src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/logo_sait.png">
+               </div>
+             </div>
+           </div>
+           <div class="container marketing">
+            <h2>Почему мы?</h2>
+            <div class="row">
+              <div class="col-lg-3 col-6">
+                <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/way1.svg" alt="Доставка">
+                <h3>Доставка 24/7<br>от 45 минут</h3>
+
+              </div>
+              <div class="col-lg-3 col-6">
+                <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/way2.svg" alt="Доставка">
+                <h3>Курьер в маске <br>и перчатках</h3>
+
+              </div>
+              <div class="col-lg-3 col-6">
+                <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/way3.svg" alt="Доставка">
+                <h3>Заказ доставят в<br> термо-сумке</h3>
+
+              </div>
+              <div class="col-lg-3 col-6">
+                <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/way4.svg" alt="Доставка">
+                <h3>Термопосуда для<br> разогревания</h3>
+
+              </div>
+            </div><!-- /.row -->
+          </div>
+
+          <div class="container-fluid menu" id="menu"> <h2>Меню</h2></div>
+          <div class="container">
+           <div class="album ">
+            <div class="container">
+
+              <div class="row">
+                <div class="col-xs-five col-sm-five col-md-five col-lg-five">
+                  <div class="card rose mb-4 ">
+                    <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/obed.png" alt="Меню">
+                    <div class="card-body">
+
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Обеды</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-five col-sm-five col-md-five col-lg-five">
+                  <div class="card orange mb-4 ">
+                    <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/pizza.png" alt="Меню">
+                    <div class="card-body">
+
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Пицца</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-five col-sm-five col-md-five col-lg-five">
+                  <div class="card green mb-4 ">
+                    <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/burger.png" alt="Меню">
+                    <div class="card-body">
+
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Бургеры</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-five col-sm-five col-md-five col-lg-five">
+                  <div class="card rose_n mb-4 ">
+                    <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/pirog.png" alt="Меню">
+                    <div class="card-body">
+
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Осетинские пироги</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-five col-sm-five col-md-five col-lg-five">
+                  <div class="card blu mb-4 ">
+                    <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/hachapuri.png" alt="Меню">
+                    <div class="card-body">
+
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Хачапури</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-five col-sm-five col-md-five col-lg-five">
+                  <div class="card orange mb-4 ">
+                    <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/shashlik.png" alt="Меню">
+                    <div class="card-body">
+
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Шашлыки</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-five col-sm-five col-md-five col-lg-five">
+                  <div class="card blu mb-4 ">
+                    <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/komp.png" alt="Меню">
+                    <div class="card-body">
+
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Для компании</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-five col-sm-five col-md-five col-lg-five">
+                  <div class="card rose_n mb-4 ">
+                    <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/k_pivu.png" alt="Меню">
+                    <div class="card-body">
+
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Закуски к пиву</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-five col-sm-five col-md-five col-lg-five">
+                  <div class="card rose mb-4 ">
+                    <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/z_holod.png" alt="Меню">
+                    <div class="card-body">
+
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Закуски холодные</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-five col-sm-five col-md-five col-lg-five">
+                  <div class="card green mb-4 ">
+                    <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/z_gor.png" alt="Меню">
+                    <div class="card-body">
+
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Закуски горячие</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-five col-sm-five col-md-five col-lg-five">
+                  <div class="card green mb-4 ">
+                    <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/salat.png" alt="Меню">
+                    <div class="card-body">
+
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Салаты</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-five col-sm-five col-md-five col-lg-five">
+                  <div class="card rose_n mb-4 ">
+                    <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/sup.png" alt="Меню">
+                    <div class="card-body">
+
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Супы</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-five col-sm-five col-md-five col-lg-five">
+                  <div class="card rose mb-4 ">
+                    <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/garnir.png" alt="Меню">
+                    <div class="card-body">
+
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Гарниры</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-five col-sm-five col-md-five col-lg-five">
+                  <div class="card blu mb-4 ">
+                    <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/gor_bl.png" alt="Меню">
+                    <div class="card-body">
+
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Горячие блюда</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-five col-sm-five col-md-five col-lg-five">
+                  <div class="card orange mb-4 ">
+                    <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/pasta.png" alt="Меню">
+                    <div class="card-body">
+
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Паста</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-five col-sm-five col-md-five col-lg-five">
+                  <div class="card blu mb-4 ">
+                    <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/blini.png" alt="Меню">
+                    <div class="card-body">
+
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Блины</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-five col-sm-five col-md-five col-lg-five">
+                  <div class="card orange mb-4 ">
+                    <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/hleb.png" alt="Меню">
+                    <div class="card-body">
+
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Хлеб</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-five col-sm-five col-md-five col-lg-five">
+                  <div class="card green mb-4 ">
+                    <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/sous.png" alt="Меню">
+                    <div class="card-body">
+
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Соусы</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-five col-sm-five col-md-five col-lg-five">
+                  <div class="card rose_n mb-4 ">
+                    <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/desert.png" alt="Меню">
+                    <div class="card-body">
+
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Десерты</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-five col-sm-five col-md-five col-lg-five">
+                  <div class="card rose mb-4 ">
+                    <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/napitki.png" alt="Меню">
+                    <div class="card-body">
+
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Напитки</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div></div>
+
+
+          <div class="container-fluid popular"><h2>Популярные блюда</h2></div>
+          <div class="container popular">
+            <div class="row">
+
+
+
+              <div class="owl-carousel owl-theme" id="popular">
+                <div class="card_popular">
+                  <div class="card_lake"> </div>
+                  <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/burger.png" alt="Меню">
+                  <div class="card-body_popular">
+                   <div class="card_ves"><img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/ves.png">300 г.</div>
+                   <div class="card_tittle"> С бараниной</div>
+                   <div class="card_category">Бургеры</div>
+                   <div class="card_text">Котлета из баранины, сыр чеддер, салат айсберг, свежие помидоры, соленые огурцы, фирменный соус</div>
+                   <div class="d-flex justify-content-between align-items-center">
+                    <div class="price">420<span>руб.</span></div>
+                    <button type="button" class="btn">Добавить</button>
+
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="card_popular">
+                <div class="card_lake"> </div>
+                <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/pizza.png" alt="Меню">
+                <div class="card-body_popular">
+                 <div class="card_ves_v"><div class="active">40 см</div><div>30 см</div></div>
+                 <div class="card_tittle"> Мясное изобилие</div>
+                 <div class="card_category">Пицца</div>
+                 <div class="card_text">Тонкое тесто, сыр моцарелла, томатный соус, свежие томаты, ветчина, курица, бекон, сырокопченая колбаса
+                 </div>
+                 <div class="d-flex justify-content-between align-items-center">
+                  <div class="price">600<span>руб.</span></div>
+                  <button type="button" class="btn">Добавить</button>
+
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card_popular">
+              <div class="card_lake"> </div>
+              <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/tabaka.png" alt="Меню">
+              <div class="card-body_popular">
+               <div class="card_ves"><img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/ves.png">700 г.</div>
+               <div class="card_tittle">Цыпленок Табака</div>
+               <div class="card_category">Горячие блюда</div>
+               <div class="card_text">Жареный фермерский цыпленок, маринованный
+               с чесноком и специями</div>
+               <div class="d-flex justify-content-between align-items-center">
+                <div class="price">640<span>руб.</span></div>
+                <button type="button" class="btn">Добавить</button>
+
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="card_popular">
+            <div class="card_lake"> </div>
+            <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/i_hachapuri.png" alt="Меню">
+            <div class="card-body_popular">
+             <div class="card_ves"><img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/ves.png">550 г.</div>
+             <div class="card_tittle">По-имеретински  </div>
+             <div class="card_category">Хачапури</div>
+             <div class="card_text">Котлета из баранины, сыр чеддер, салат айсберг, свежие помидоры, соленые огурцы, фирменный соус</div>
+             <div class="d-flex justify-content-between align-items-center quantity">
+              <div class="price">780<span>руб.</span></div>
+              <div class="quantity-block">
+                <button class="quantity-arrow-minus"> - </button>
+                <input class="quantity-num" type="number" value="1" />
+                <button class="quantity-arrow-plus"> + </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="card_popular">
+          <div class="card_lake"> </div>
+          <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/cezar.png" alt="Меню">
+          <div class="card-body_popular">
+           <div class="card_ves"><img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/ves.png">280 г.</div>
+           <div class="card_tittle">Цезарь с курицей</div>
+           <div class="card_category">Салаты</div>
+           <div class="card_text">Нежное филе курицы, маринованное и обжаренное, салат Айсберг, соус Цезарь, томаты черри, сыр Пармезан</div>
+           <div class="d-flex justify-content-between align-items-center">
+            <div class="price">390<span>руб.</span></div>
+            <button type="button" class="btn">Добавить</button>
+
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="card_popular">
+        <div class="card_lake"> </div>
+        <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/burger.png" alt="Меню">
+        <div class="card-body_popular">
+         <div class="card_ves">300 г.</div>
+         <div class="card_tittle"> С бараниной</div>
+         <div class="card_category">Бургеры</div>
+         <div class="card_text">Котлета из баранины, сыр чеддер, салат айсберг, свежие помидоры, соленые огурцы, фирменный соус</div>
+         <div class="d-flex justify-content-between align-items-center">
+          <div class="price">420<span>руб.</span></div>
+          <button type="button" class="btn">Добавить</button>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div> </div>
+</div>
+
+<div class="container-fluid spec"><h2>Специальные предложения</h2></div>
+<div class="container spec">
+  <div class="row">
+   <div class="col-md-6 item ">
+     <div class="banket">
+       <h3>банкеты на дому и в офисе</h3>
+       <p>Организуем мероприятие<br>любого формата, на<br> любой кошелек</p>
+     </div></div>
+     <div class="col-md-6 item ">
+       <div class="corp">
+         <h3>корпоративное питание</h3>
+         <p>Оптимизуруйте время <br>сотрудников и работайте<br>эффективно</p>
+       </div></div>
+       <div class="col-md-6 item ">
+         <div class="week">
+          <h3>готовая еда на неделю</h3>
+          <p>Сбалансированное питание, <br>удобство и экономия <br>вашего времени</p>
+        </div></div>
+        <div class="col-md-6 item ">
+         <div class="cake">
+          <h3>торты на заказ</h3>
+          <p>Оригинальные торты <br>
+            ручной работы от <br>
+          нашего кондитера</p>
+        </div></div>
+      </div>
+    </div>
+    <div class="container marketing zakaz">
+      <h2>Как оформить заказ?</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-6">
+          <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/zakaz1.svg" alt="Как оформить заказ">
+          <h3>На сайте</h3>
+
+        </div>
+        <div class="col-lg-4 col-6">
+          <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/zakaz2.svg" alt="Как оформить заказ">
+          <h3>По телефону</h3>
+
+        </div>
+        <div class="col-lg-4 col-6">
+          <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/zakaz3.svg" alt="Как оформить заказ">
+          <h3>В приложении </h3>
+
+          <p class="prim">Скоро</p>
+        </div>
+
+      </div><!-- /.row -->
+    </div>
+    <div class="container contact" id="oplata"><h2>Зона доставки</h2>
+      <div class="row">
+        <div class="col-md-6">
+         <ul>
+          <li class="red"><span>г. Реутов</span></li>
+          <li class="red"><span>Новогиреево</span></li>
+          <li class="red"><span>Ивановское</span></li>
+          <li class="red"><span>Новокосино</span></li>
+          <li class="red icon">от 45 минут</li>
+          <li class="blu"><span>г. Балашиха</span></li>
+          <li class="blu"><span>Перово</span></li>
+          <li class="blu"><span>Вешняки</span></li>
+          <li class="blu"><span>Измайлово</span></li>
+          <li class="blu icon">от 60 минут</li>
+        </ul>
+        <p class="text">Возможна доставка за пределы указанной зоны по предварительной договоренности<p>
+         <p class="text_down"><span>?</span>Подробнее в <a href="">Оплата и доставка</a><p>
+         </div>
+         <div class="col-md-6">
+          <img class="map" src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/map.png" alt="Карта доставки">
+        </div>
+      </div></div>
+      <div class="container-fluid actions">
+        <div class="container">
+
+          <div class="row">
+           <div class="col-md-8">
+             <h2>Следи за акциями</h2>
+             <p>Подписывайся, чтобы сразу <br>узнавать о новостях и акциях!<p>
+               <div class="soc_icon">
+                 <a href="#"><img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/vk.png" alt="Вконтакте"></a>
+                 <a href="#"><img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/inst.png" alt="Instagram"></a>
+                 <a href="#"><img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/facebook.png" alt="Facebook"></a>
+               </div>
+             </div>
+             <div class="col-md-4 action_right"><img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/actions.png" alt="Следи за акциями"></div>
+           </div></div></div>
+           <div class="container rewes" id="rewes">
+            <h2>Отзывы</h2>
+            <div class="row">
+              <div class="owl-carousel owl-theme" id="slider">
+                <!--Слайд 1-->
+                <div class="slide">
+                 <div class="card-rew slide" >
+
+                  <div class="card-body ">
+                   <div class="name">Филипп Сергеев</div>
+                   <div class="text"> Спасибо, очень вкусно, а цыпленок табака просто блаженство!</div>
+
+                   <div class="d-flex justify-content-between align-items-center">
+                    <div class="stars">
+                     <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/stars.png" alt="stars">
+                   </div>
+                   <div class="date">
+                    16.11.2020
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+           <div class="card-rew slide" >
+
+            <div class="card-body ">
+             <div class="name">Филипп Сергеев</div>
+             <div class="text"> Спасибо, очень вкусно, а цыпленок табака просто блаженство!</div>
+
+             <div class="d-flex justify-content-between align-items-center">
+              <div class="stars">
+               <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/stars.png" alt="stars">
+             </div>
+             <div class="date">
+              16.11.2020
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide">
+     <div class="card-rew slide" >
+
+      <div class="card-body ">
+       <div class="name">Филипп Сергеев</div>
+       <div class="text"> Спасибо, очень вкусно, а цыпленок табака просто блаженство!</div>
+
+       <div class="d-flex justify-content-between align-items-center">
+        <div class="stars">
+         <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/stars.png" alt="stars">
+       </div>
+       <div class="date">
+        16.11.2020
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="slide">
+ <div class="card-rew slide" >
+
+  <div class="card-body ">
+   <div class="name">Филипп Сергеев</div>
+   <div class="text"> Спасибо, очень вкусно, а цыпленок табака просто блаженство!</div>
+
+   <div class="d-flex justify-content-between align-items-center">
+    <div class="stars">
+     <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/stars.png" alt="stars">
+   </div>
+   <div class="date">
+    16.11.2020
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="slide">
+ <div class="card-rew slide" >
+
+  <div class="card-body ">
+   <div class="name">Филипп Сергеев</div>
+   <div class="text"> Спасибо, очень вкусно, а цыпленок табака просто блаженство!</div>
+
+   <div class="d-flex justify-content-between align-items-center">
+    <div class="stars">
+     <img src="{$wa_url}/wa-data/public/site/themes/tyt-eda/img/stars.png" alt="stars">
+   </div>
+   <div class="date">
+    16.11.2020
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<p class="text_down"><span>?</span>Свои отзывы и пожелания вы можете написать в <a href="">Личном кабинете</a><p></div>
+</div>
+
+          
+
+{/if}
